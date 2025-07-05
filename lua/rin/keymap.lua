@@ -24,7 +24,14 @@ vim.api.nvim_create_autocmd('LspAttach', {
       callback = function()
         vim.lsp.buf.format { async = false, id = event.data.client_id }
       end
+    })
 
+    -- https://www.reddit.com/r/neovim/comments/1eeqn6o/comment/lft5kqt/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button
+    vim.diagnostic.config({
+      virtual_text = {
+        prefix = ' ■ ', -- Could be '●', '▎', 'x', '■', , 
+      },
+      update_in_insert = true, -- you wound proably need this to be true, it updates diagnostic when you type
     })
   end,
 })
