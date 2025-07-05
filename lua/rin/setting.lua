@@ -15,4 +15,4 @@ vim.opt.incsearch = true
  
 vim.opt.termguicolors = true
 
-vim.opt.formatoptions = cro
+vim.opt.formatoptions = "ql"
