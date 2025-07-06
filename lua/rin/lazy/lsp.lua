@@ -29,6 +29,7 @@ return {
     require('mason-lspconfig').setup({
       ensure_installed = {
         "lua_ls",
+        "ts_ls"
       },
       handlers = {
         function(server_name)
@@ -36,7 +37,7 @@ return {
             capabilities = capabilities,
           })
         end,
-        lua_ls = function()
+        ["lua_ls"] = function()
           require('lspconfig').lua_ls.setup({
             capabilities = capabilities,
             settings = {
@@ -55,6 +56,26 @@ return {
               }
             }
           })
+        end,
+        -- https://www.reddit.com/r/neovim/comments/1g4e3sa/finally_neovim_native_vue_lsp_perfection_2024/
+        ["ts_ls"] = function()
+          require('lspconfig').ts_ls.setup({
+              capabilities = capabilities,
+              init_options = {
+                plugins = { -- I think this was my breakthrough that made it work
+                  {
+                    name = "@vue/typescript-plugin",
+                    location = vim.fn.stdpath 'data' ..
+                        '/mason/packages/vue-language-server/node_modules/@vue/language-server',
+                    languages = { "vue" },
+                  },
+                },
+              },
+              filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
+            },
+
+            require('lspconfig').volar.setup({})
+          )
         end
       }
     })
