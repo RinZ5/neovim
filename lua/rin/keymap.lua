@@ -73,8 +73,16 @@ local trouble_mappings = {
   { "<leader>tt", "<CMD>Trouble diagnostics toggle<CR>", desc = "Toggle trouble" },
 }
 
+local harpoon = require("harpoon")
+
+local harpoon_mappings = {
+  { "<leader>ha", function() harpoon:list():add() end,                         desc = "Harpoon add" },
+  { "<leader>he", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end, desc = "Harpoon menu" }
+}
+
 which_key.add(non_lsp_mappings)
 which_key.add(telescope_mappings)
 which_key.add(neotree_mappings)
 which_key.add(undotree_mappings)
 which_key.add(trouble_mappings)
+which_key.add(harpoon_mappings)
