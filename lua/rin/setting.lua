@@ -15,6 +15,6 @@ vim.opt.incsearch = true
 
 vim.opt.termguicolors = true
 
-vim.opt.formatoptions = "ql"
+vim.opt.formatoptions = "tqj"
 
 vim.opt.cursorline = true

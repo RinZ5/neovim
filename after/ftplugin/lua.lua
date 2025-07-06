@@ -1,1 +1,1 @@
-vim.opt_local.formatoptions = "ql"
+vim.opt_local.formatoptions = "tqj"
