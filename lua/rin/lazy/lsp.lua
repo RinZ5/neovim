@@ -103,6 +103,10 @@ return {
     require('luasnip.loaders.from_vscode').lazy_load()
 
     cmp.setup({
+      window = {
+        completion = cmp.config.window.bordered(),
+        documentation = cmp.config.window.bordered(),
+      },
       sources = {
         { name = 'path' },
         { name = 'nvim_lsp' },

@@ -18,6 +18,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
         prefix = ' ■ ', -- Could be '●', '▎', 'x', '■', , 
       },
       update_in_insert = true, -- you wound proably need this to be true, it updates diagnostic when you type
+      float = { border = "rounded" },
     })
   end,
 })
@@ -40,9 +41,9 @@ local lsp_mappings = {
     end,
     desc = "Toggle diagnostic"
   },
-  { "K",  vim.lsp.buf.hover,         desc = "Show hover information" },
-  { "gd", vim.lsp.buf.definition,    desc = "Go to definition" },
-  { "gl", vim.diagnostic.open_float, desc = "Open diagnostic float" },
+  { "K",  function() vim.lsp.buf.hover({ border = 'single' }) end, desc = "Show hover information" },
+  { "gd", vim.lsp.buf.definition,                                  desc = "Go to definition" },
+  { "gl", vim.diagnostic.open_float,                               desc = "Open diagnostic float" },
 }
 
 local non_lsp_mappings = {
