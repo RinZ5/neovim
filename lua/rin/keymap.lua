@@ -65,11 +65,16 @@ local neotree_mappings = {
 }
 
 local undotree_mappings = {
-  -- { "<leader>u", require("undotree").toggle, desc = "Toggle undotree" }
   { "<leader>u", vim.cmd.UndotreeToggle, desc = "Toggle undotree" }
+}
+
+local trouble_mappings = {
+  { "<leader>t",  group = "Trouble" },
+  { "<leader>tt", "<CMD>Trouble diagnostics toggle<CR>", desc = "Toggle trouble" },
 }
 
 which_key.add(non_lsp_mappings)
 which_key.add(telescope_mappings)
 which_key.add(neotree_mappings)
 which_key.add(undotree_mappings)
+which_key.add(trouble_mappings)
