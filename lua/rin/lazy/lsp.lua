@@ -15,6 +15,7 @@ return {
     "j-hui/fidget.nvim",
   },
   config = function()
+    require('lspconfig').jdtls.setup({})
     local cmp_lsp = require("cmp_nvim_lsp")
     local capabilities = vim.tbl_deep_extend(
       "force",
@@ -37,7 +38,7 @@ return {
             capabilities = capabilities,
           })
         end,
-        ["lua_ls"] = function()
+        lua_ls = function()
           require('lspconfig').lua_ls.setup({
             capabilities = capabilities,
             settings = {
@@ -58,7 +59,7 @@ return {
           })
         end,
         -- https://www.reddit.com/r/neovim/comments/1g4e3sa/finally_neovim_native_vue_lsp_perfection_2024/
-        ["ts_ls"] = function()
+        ts_ls = function()
           require('lspconfig').ts_ls.setup({
               capabilities = capabilities,
               init_options = {
@@ -76,6 +77,13 @@ return {
 
             require('lspconfig').volar.setup({})
           )
+        end,
+        jdtls = function()
+          require('java').setup({})
+
+          require('lspconfig').jdtls.setup({
+            capabilities = capabilities
+          })
         end
       }
     })
@@ -105,5 +113,5 @@ return {
         end,
       },
     })
-  end
+  end,
 }
