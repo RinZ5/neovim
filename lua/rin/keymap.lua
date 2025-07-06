@@ -47,5 +47,10 @@ local telescope_mappings = {
   { "<leader>fl", "<CMD>Telescope live_grep<CR>",  desc = "Live grep" },
 }
 
+local neotree_mappings = {
+  { "<leader>b", "<CMD>Neotree toggle<CR>", desc = "Open NeoTree" }
+}
+
 which_key.add(non_lsp_mappings)
 which_key.add(telescope_mappings)
+which_key.add(neotree_mappings)
