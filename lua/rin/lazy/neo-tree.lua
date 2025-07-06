@@ -13,7 +13,14 @@ return {
     -- "folke/snacks.nvim",
   },
   lazy = false, -- neo-tree will lazily load itself
-  opts = {
-    -- add options here
-  },
+  config = function()
+    require("neo-tree").setup({
+      window = {
+        position = "right"
+      },
+      filesystem = {
+        hijack_netrw_behavior = "disabled"
+      }
+    })
+  end
 }
