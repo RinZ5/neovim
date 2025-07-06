@@ -54,14 +54,14 @@ local non_lsp_mappings = {
 }
 
 local telescope_mappings = {
-  { "<leader>f",  group = "Find" },
+  { "<leader>f",  group = "[Telescope]" },
   { "<leader>ff", "<CMD>Telescope find_files<CR>", desc = "Find file" },
   { "<leader>fl", "<CMD>Telescope live_grep<CR>",  desc = "Live grep" },
   { "<leader>fb", "<CMD>Telescope buffers<CR>",    desc = "Buffer" },
 }
 
 local neotree_mappings = {
-  { "<leader>b", "<CMD>Neotree toggle<CR>", desc = "Open NeoTree" }
+  { "<leader>b", "<CMD>Neotree toggle<CR>", desc = "Toggle NeoTree" }
 }
 
 local undotree_mappings = {
@@ -69,13 +69,14 @@ local undotree_mappings = {
 }
 
 local trouble_mappings = {
-  { "<leader>t",  group = "Trouble" },
+  { "<leader>t",  group = "[Trouble]" },
   { "<leader>tt", "<CMD>Trouble diagnostics toggle<CR>", desc = "Toggle trouble" },
 }
 
 local harpoon = require("harpoon")
 
 local harpoon_mappings = {
+  { "<leader>h",  group = "[Harpoon]" },
   { "<leader>ha", function() harpoon:list():add() end,                         desc = "Harpoon add" },
   { "<leader>he", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end, desc = "Harpoon menu" }
 }
