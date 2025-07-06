@@ -11,9 +11,21 @@ vim.api.nvim_create_autocmd('LspAttach', {
       { "<leader>ln", vim.lsp.buf.rename,           buffer = 1,   desc = "Rename" },
       { "<leader>lr", vim.lsp.buf.references,       buffer = 1,   desc = "References" },
       { "<leader>lw", vim.lsp.buf.workspace_symbol, buffer = 1,   desc = "Workspace symbol" },
-      { "K",          vim.lsp.buf.hover,            buffer = 1,   desc = "Show hover information" },
-      { "gd",         vim.lsp.buf.definition,       buffer = 1,   desc = "Go to definition" },
-      { "gl",         vim.diagnostic.open_float,    buffer = 1,   desc = "Open diagnostic float" },
+      {
+        "<leader>lt",
+        function()
+          if vim.diagnostic.is_enabled() then
+            vim.diagnostic.enable(false)
+          else
+            vim.diagnostic.enable()
+          end
+        end,
+        buffer = 1,
+        desc = "Toggle diagnostic"
+      },
+      { "K",  vim.lsp.buf.hover,         buffer = 1, desc = "Show hover information" },
+      { "gd", vim.lsp.buf.definition,    buffer = 1, desc = "Go to definition" },
+      { "gl", vim.diagnostic.open_float, buffer = 1, desc = "Open diagnostic float" },
     }
 
     which_key.add(mappings)
@@ -45,6 +57,7 @@ local telescope_mappings = {
   { "<leader>f",  group = "Find" },
   { "<leader>ff", "<CMD>Telescope find_files<CR>", desc = "Find file" },
   { "<leader>fl", "<CMD>Telescope live_grep<CR>",  desc = "Live grep" },
+  { "<leader>fb", "<CMD>Telescope buffers<CR>",    desc = "Buffer" },
 }
 
 local neotree_mappings = {
