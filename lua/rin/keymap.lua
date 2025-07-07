@@ -66,7 +66,7 @@ local neotree_mappings = {
 }
 
 local undotree_mappings = {
-  { "<leader>u", vim.cmd.UndotreeToggle, desc = "Toggle undotree" }
+  { "<leader>u", "<CMD>UndotreeToggle<CR><CMD>UndotreeFocus<CR>", desc = "Toggle undotree" }
 }
 
 local trouble_mappings = {
