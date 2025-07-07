@@ -29,6 +29,9 @@ return {
         date_format = "%Y-%m-%d",
         time_format = "%H:%M",
       },
+      ui = {
+        enable = false
+      },
       disable_frontmatter = true,
       follow_url_func = function(url)
         -- Open the URL in the default web browser.
