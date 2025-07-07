@@ -47,9 +47,11 @@ local lsp_mappings = {
 }
 
 local non_lsp_mappings = {
-  { "<leader>e", vim.cmd.Ex,                                             desc = "Open file explorer" },
-  { "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], desc = "Search and replace word under cursor" },
+  { "<leader>e", vim.cmd.Ex, desc = "Open file explorer" },
 }
+
+
+
 
 local telescope_mappings = {
   { "<leader>f",  group = "[Telescope]" },
