@@ -1,7 +1,7 @@
 vim.cmd.colorscheme("catppuccin")
 
 vim.opt.nu = true
-vim.opt.relativenumber = true
+vim.opt.relativenumber = false
 
 vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
