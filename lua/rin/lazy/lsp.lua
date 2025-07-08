@@ -15,7 +15,6 @@ return {
     "j-hui/fidget.nvim",
   },
   config = function()
-    require('lspconfig').jdtls.setup({})
     local cmp_lsp = require("cmp_nvim_lsp")
     local capabilities = vim.tbl_deep_extend(
       "force",
@@ -84,7 +83,7 @@ return {
           require('lspconfig').jdtls.setup({
             capabilities = capabilities
           })
-        end
+        end,
       }
     })
 
