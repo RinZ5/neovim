@@ -51,6 +51,7 @@ local non_lsp_mappings = {
     { "<leader>e", "<CMD>Yazi<CR>", desc = "Open file explorer" },
     { ">",         ">gv",           desc = "Indent Right",      mode = "v" },
     { "<",         "<gv",           desc = "Indent Left",       mode = "v" },
+    { "<C-n>",     "<CMD>nohl<CR>", desc = "Remove highlight" }
 }
 
 
