@@ -15,7 +15,7 @@ local conceallevel = 1
 local obsidian_mappings = {
     { "<leader>o",  group = "[Obsidian]" },
     { "<leader>on", "<CMD>ObsidianTemplate note<CR>", desc = "Insert note template" },
-    { "<leader>oo", "<CMD>ObsidianTemplate<CR>",      desc = "Select template" },
+    { "<leader>ot", "<CMD>ObsidianTemplate<CR>",      desc = "Select template" },
     {
         "<leader>of",
         "<CMD>:s/\\(-\\|\\)\\(\\w\\)\\(\\w*\\)/\\=(submatch(1) == '-' ? ' ' : '') . toupper(submatch(2)) . tolower(submatch(3))/g | noh<CR>",
