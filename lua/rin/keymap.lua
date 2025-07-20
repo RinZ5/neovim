@@ -43,6 +43,7 @@ local lsp_mappings = {
     },
     { "K",  function() vim.lsp.buf.hover({ border = 'single' }) end, desc = "Show hover information" },
     { "gd", vim.lsp.buf.definition,                                  desc = "Go to definition" },
+    { "gD", vim.lsp.buf.declaration,                                 desc = "Go to declaration" },
     { "gl", vim.diagnostic.open_float,                               desc = "Open diagnostic float" },
 }
 
