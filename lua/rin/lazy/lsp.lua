@@ -148,6 +148,10 @@ return {
                 ['<C-k>'] = cmp.mapping.select_prev_item(cmp_select),
                 ['<C-j>'] = cmp.mapping.select_next_item(cmp_select),
                 -- ['<CR>'] = cmp.mapping.confirm({ select = true }),
+                ["<C-e>"] = cmp.mapping({
+                    i = cmp.mapping.abort(),
+                    c = cmp.mapping.close(),
+                }),
                 ["<Tab>"] = cmp.mapping(function(fallback)
                     if cmp.visible() then
                         cmp.confirm({ select = true })
