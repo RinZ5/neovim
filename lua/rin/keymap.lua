@@ -49,14 +49,11 @@ local lsp_mappings = {
 
 local non_lsp_mappings = {
     -- { "<leader>e", vim.cmd.Ex, desc = "Open file explorer" },
-    { "<leader>e", "<CMD>Yazi<CR>", desc = "Open file explorer" },
-    { ">",         ">gv",           desc = "Indent Right",      mode = "v" },
-    { "<",         "<gv",           desc = "Indent Left",       mode = "v" },
-    { "<C-n>",     "<CMD>nohl<CR>", desc = "Remove highlight" }
+    { "<leader>e", "<CMD>lua MiniFiles.open()<CR>", desc = "Open file explorer" },
+    { ">",         ">gv",                           desc = "Indent Right",      mode = "v" },
+    { "<",         "<gv",                           desc = "Indent Left",       mode = "v" },
+    { "<C-n>",     "<CMD>nohl<CR>",                 desc = "Remove highlight" }
 }
-
-
-
 
 local telescope_mappings = {
     { "<leader>f",  group = "[Telescope]" },
