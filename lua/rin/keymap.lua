@@ -90,6 +90,7 @@ local mini_mappings = {
     { "<leader>ff", "<CMD>Pick files<CR>",     desc = "Pick files" },
     { "<leader>fl", "<CMD>Pick grep_live<CR>", desc = "Live grep" },
     { "<leader>fb", "<CMD>Pick buffers<CR>",   desc = "Buffer" },
+    { "<leader>fh", "<CMD>Pick help<CR>",      desc = "Help" },
 }
 
 which_key.add(lsp_mappings)
