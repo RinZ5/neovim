@@ -49,23 +49,24 @@ local lsp_mappings = {
 
 local non_lsp_mappings = {
     -- { "<leader>e", vim.cmd.Ex, desc = "Open file explorer" },
-    { "<leader>e", "<CMD>lua MiniFiles.open()<CR>", desc = "Open file explorer" },
+    { "<leader>e", "<CMD>Oil<CR>",                  desc = "Open file explorer" },
+    { "<leader>b", "<CMD>lua MiniFiles.open()<CR>", desc = "Open file explorer" },
     { ">",         ">gv",                           desc = "Indent Right",      mode = "v" },
     { "<",         "<gv",                           desc = "Indent Left",       mode = "v" },
     { "<C-n>",     "<CMD>nohl<CR>",                 desc = "Remove highlight" }
 }
 
-local telescope_mappings = {
-    { "<leader>f",  group = "[Telescope]" },
-    { "<leader>ff", "<CMD>Telescope find_files<CR>",                    desc = "Find file" },
-    { "<leader>fl", "<CMD>Telescope live_grep<CR>",                     desc = "Live grep" },
-    { "<leader>fb", "<CMD>Telescope buffers<CR>",                       desc = "Buffer" },
-    { "<leader>fw", "<CMD>Telescope lsp_dynamic_workspace_symbols<CR>", desc = "Symbol" },
-}
+-- local telescope_mappings = {
+--     { "<leader>f",  group = "[Telescope]" },
+--     { "<leader>ff", "<CMD>Telescope find_files<CR>",                    desc = "Find file" },
+--     { "<leader>fl", "<CMD>Telescope live_grep<CR>",                     desc = "Live grep" },
+--     { "<leader>fb", "<CMD>Telescope buffers<CR>",                       desc = "Buffer" },
+--     { "<leader>fw", "<CMD>Telescope lsp_dynamic_workspace_symbols<CR>", desc = "Symbol" },
+-- }
 
-local neotree_mappings = {
-    { "<leader>b", "<CMD>Neotree toggle<CR>", desc = "Toggle NeoTree" }
-}
+-- local neotree_mappings = {
+--     { "<leader>b", "<CMD>Neotree toggle<CR>", desc = "Toggle NeoTree" }
+-- }
 
 local undotree_mappings = {
     { "<leader>u", "<CMD>UndotreeToggle<CR><CMD>UndotreeFocus<CR>", desc = "Toggle undotree" }
@@ -84,10 +85,18 @@ local harpoon_mappings = {
     { "<leader>he", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end, desc = "Harpoon menu" }
 }
 
+local mini_mappings = {
+    { "<leader>f",  group = "[Pick]" },
+    { "<leader>ff", "<CMD>Pick files<CR>",     desc = "Pick files" },
+    { "<leader>fl", "<CMD>Pick grep_live<CR>", desc = "Live grep" },
+    { "<leader>fb", "<CMD>Pick buffers<CR>",   desc = "Buffer" },
+}
+
 which_key.add(lsp_mappings)
 which_key.add(non_lsp_mappings)
-which_key.add(telescope_mappings)
-which_key.add(neotree_mappings)
+-- which_key.add(telescope_mappings)
+which_key.add(mini_mappings)
+-- which_key.add(neotree_mappings)
 which_key.add(undotree_mappings)
 which_key.add(trouble_mappings)
 which_key.add(harpoon_mappings)
