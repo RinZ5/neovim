@@ -7,10 +7,14 @@ return {
         require('mini.files').setup({})
         require('mini.pick').setup({
             mappings = {
-                scroll_down  = '<C-j>',
+                move_down    = '<C-j>',
+                move_start   = '<C-g>',
+                move_up      = '<C-k>',
+
+                -- scroll_down   = '<C-j>',
                 scroll_left  = '<C-h>',
                 scroll_right = '<C-l>',
-                scroll_up    = '<C-k>',
+                -- scroll_up     = '<C-k>',
             }
         })
         require('mini.jump').setup({})
