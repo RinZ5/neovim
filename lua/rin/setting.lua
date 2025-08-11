@@ -17,8 +17,6 @@ vim.opt.termguicolors = true
 
 vim.opt.signcolumn = "yes"
 
--- vim.opt.formatoptions = "tqj"
-
 vim.opt.cursorline = true
 
 vim.api.nvim_create_autocmd("FileType", {
