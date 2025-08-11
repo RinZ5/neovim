@@ -4,7 +4,11 @@ return {
     'echasnovski/mini.nvim',
     version = false,
     config = function()
-        require('mini.files').setup({})
+        require('mini.files').setup({
+            mappings = {
+                go_in_plus = '<CR>',
+            }
+        })
         require('mini.pick').setup({
             mappings = {
                 move_down    = '<C-j>',
